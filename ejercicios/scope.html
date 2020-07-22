@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Scope</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la Consola</em></p>
+
+    <script>
+      //Global Scope
+      var message = "Hello, Platzi!";
+
+      //Function Scope
+      function printNumber() {
+        for (var index = 0; index < 10; index++) {
+          function evPrintNumber(n) {
+            setTimeout(function () {
+              console.log(n);
+            }, 100);
+          }
+          evPrintNumber(index);
+        }
+      }
+      printNumber();
+
+      //Block Scope
+      function printNumber2() {
+        for (let index = 0; index < 10; index++) {
+          setTimeout(function () {
+            console.log(index);
+          }, 100);
+        }
+      }
+      printNumber2();
+
+      //Module Scope
+      
+    </script>
+  </body>
+</html>
