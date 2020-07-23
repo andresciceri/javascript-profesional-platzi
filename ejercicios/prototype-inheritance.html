@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Prototype Inheritance</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la Consola</em></p>
+
+    <script>
+      function Hero(name) {
+        this.name = name;
+      }
+      Hero.prototype.saludar = function () {
+        console.log(`Hola soy ${this.name}`);
+      };
+      const zelda = new Hero("Zelda");
+
+      // propiedades de la instancia
+      console.log("Name: ", zelda.name);
+      // propiedades de la Clase
+      console.log("Saludar: ", zelda.saludar);
+      // propiedades heredadas
+      console.log("ToString: ", zelda.toString);
+      // hasOwnProperty
+      console.log("zeldaHasOwnProperty: ", zelda.hasOwnProperty("saludar"));
+    </script>
+  </body>
+</html>

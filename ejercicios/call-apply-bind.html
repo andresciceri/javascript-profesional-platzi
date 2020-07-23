@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Call Apply Bind</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la Consola</em></p>
+
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">Nunca parar de aprender!</button></li>
+    </ul>
+
+    <script>
+      // Establece `this` usando `call`
+      function saludar() {
+        console.log(`Hola. Soy ${this.name} ${this.lastname}`);
+      }
+
+      const andres = {
+        name: "Andres",
+        lastname: "Escobar",
+      };
+      saludar.call(andres);
+
+      function caminar(metros, direccion) {
+        console.log(`${this.name} camina ${metros} metros hacia ${direccion}.`);
+      }
+      caminar.call(andres, 400, "norte");
+
+      // Estable 'this' usando 'apply'
+
+      caminar.apply(andres, [800, "noereste"]);
+
+      // Estable 'this' usando 'bind'
+      const paula = { name: "Paula", lastname: "Restrepo" };
+      const paulaSaluda = saludar.bind(paula);
+      const paulaCamina = caminar.bind(paula, 2000);
+      paulaSaluda();
+      paulaCamina("Oeste");
+
+      const buttons = document.getElementsByClassName("call-to-action");
+
+      /*buttons.forEach((button) => {
+        button.onclick = () => alert("Nunca pares de aprender");
+      });*/
+
+      Array.prototype.forEach.call(buttons, (button) => {
+        button.onclick = () => alert("Nunca pares de aprender");
+      });
+    </script>
+  </body>
+</html>
