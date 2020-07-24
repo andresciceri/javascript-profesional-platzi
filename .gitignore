@@ -16,3 +16,7 @@ web_modules/
 
 # Optional eslint cache
 .eslintcache
+
+.cache
+
+dist/
