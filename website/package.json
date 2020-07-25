@@ -19,5 +19,8 @@
     "last 3 opera versions",
     "last 3 ios_saf versions",
     "last 3 safari versions"
-  ]
+  ],
+  "dependencies": {
+    "@andresciceri/platzimediaplayer": "^1.0.0"
+  }
 }
